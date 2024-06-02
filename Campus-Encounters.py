@@ -43,7 +43,7 @@ def simulate_encounters(initial_state_female, initial_state_male, num_steps):
     encounter_count = 0
     for _ in range(num_steps):
         # 随机决定当前是男生还是女生行动
-        gender = np.random.choice(['female', 'male'], p=[0.5, 0.5])
+        gender = np.random.choice(['female', 'male'], p=[0.74, 0.26])
         if gender == 'female':
             current_state_female = next_state(current_state_female, 'female')
         else:
@@ -55,7 +55,7 @@ def simulate_encounters(initial_state_female, initial_state_male, num_steps):
     return encounter_count
 
 num_simulations = 10  # 每个步数下的模拟次数
-step_range = range(100, 10001, 100)  # 不同的步数范围
+step_range = range(100, 10001, 50)  # 不同的步数范围
 
 # 模拟过程
 average_encounter_probabilities = []  # 存储每个步数下的平均相遇概率
